@@ -17,12 +17,12 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'Model Factories',
-            'excerpt' => 'Excerpt of our First Model Factory',
-            'body' => 'Content of Body',
-            'image_path' => 'Image Path',
+            'title' => $this->faker->unique()->sentence(),
+            'excerpt' => $this->faker->realText($maxNBChars = 50),
+            'body' => $this->faker->text(),
+            'image_path' => $this->faker->imageUrl(640, 480),
             'is_published' => 1,
-            'min_to_read' => 2,
+            'min_to_read' => $this->faker->numberBetween(1, 10),
         ];
     }
 }
