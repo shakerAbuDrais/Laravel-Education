@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/blog', [PostController::class, 'index']);
 Route::resource('blog', PostController::class);
+Route::get('/', function () {
+    return view('index'); // Replace 'welcome' with the actual view you want to display.
+});
+
 
 // route for invove methode
 Route::get('blog', [PostController::class, 'index'])->name('blog.index');
